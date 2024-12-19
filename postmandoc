@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "User Data Registration Project",
+    "description": "APIs for user registration, login, authentication, and profile management.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Registration",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/register",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "register"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"NIDNumber\": \"1234567890\",\n  \"phoneNumber\": \"017XXXXXXXX\",\n  \"password\": \"password123\",\n  \"bloodGroup\": \"O+\"\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/login",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "login"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phoneNumber\": \"017XXXXXXXX\",\n  \"password\": \"password123\"\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single User Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Cookie", "value": "token=your_jwt_token" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/profile",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All User Profiles",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Cookie", "value": "token=your_jwt_token" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/profiles",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "profiles"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User Profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Cookie", "value": "token=your_jwt_token" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/profile",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "profile"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Jane\",\n  \"bloodGroup\": \"A+\"\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User Profile",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Cookie", "value": "token=your_jwt_token" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/profile",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Cookie", "value": "token=your_jwt_token" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users/logout",
+          "host": ["http://localhost:5000"],
+          "path": ["api", "users", "logout"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
